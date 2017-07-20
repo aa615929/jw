@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			
+			.inp1{
+				width: 200px;
+				height: 44px;
+			}
+			.inp4{
+				width: 200px;
+				height: 44px;
+			}
+			.inp2{
+				width: 44px;
+				height: 48px;
+			}
+			.inp3{
+				width: 44px;
+				height: 48px;
+			}
+			#d1{
+				display: flex;
+				width: 244px;
+				-border: 1px solid red;
+				height: 100px;
+				position: relative;
+				margin: 100px auto;
+			}
+			#ul1{
+				position: absolute;
+				top: 48px;
+				display: none;
+			}
+			#ul1 li{
+				width: 244px;
+				height: 30px;
+				line-height: 30px;
+				color: #333333;
+				top: 0;
+				left: 0;
+				padding-left: 5px;
+			}
+			#ul1 li:hover{
+				background-color: #CCCCCC;
+			}
+			#d2{
+				display: flex;
+				width: 244px;
+				-border: 1px solid red;
+				height: 100px;
+				position: relative;
+				margin: 100px auto;
+			}
+			#ul2{
+				position: absolute;
+				top: 48px;
+				display: none;
+			}
+			#ul2 li:hover{
+				background-color: #CCCCCC;
+			}
+			#one{
+				width: 400px;
+				height: 400px;
+				background-color: #666666;
+				margin: 50px auto;
+			}
+			#ul2 li{
+				
+				width: 244px;
+				height: 30px;
+				line-height: 30px;
+				color: #333333;
+				top: 0;
+				left: 0;
+				padding-left: 5px;
+			}
+		</style>
+	</head>
+	<script src="js/3.16.js"></script>
+	<body>
+	<div id="one">
+		<div id="d1">
+			<input type="text" value="" class="inp1"/>
+			<input type="button" value="dj" class="inp2">
+			<ul id="ul1">
+				<li>5万元</li>
+				<li>10万元</li>
+				<li>15万元</li>
+				<li>20万元</li>
+				<li>25万元</li>
+				<li>30万元</li>
+			</ul>
+		</div>
+		<div id="d2">
+			<input type="text" value="" class="inp4"/>
+			<input type="button" value="dj" class="inp3">
+			<ul id="ul2">
+				<li>5万元</li>
+				<li>10万元</li>
+				<li>15万元</li>
+				<li>20万元</li>
+				<li>25万元</li>
+				<li>30万元</li>
+			</ul>
+		</div>
+	</div>	
+		<script>
+
+		
+		function flist(ull,inp,bb,lli){
+			$(inp).click(function(){
+				 	$(ull).stop(true,true).slideDown(200);
+				 	return false;
+            	})
+				$(inp).parent().click(function(){
+					$(ull).stop(true,true).slideUp(200);
+//					return false;
+				})
+				$(lli).click(function(){
+					var a = parseInt($(this).text())
+					$(bb).val(a)
+				})
+		}
+		$(function(){
+				flist("#ul1",".inp2",".inp1","#ul1 li");
+				flist("#ul2",".inp3",".inp4","#ul2 li");
+		})	
+		</script>
+	</body>
+</html>
